@@ -1,0 +1,263 @@
+{
+  // ============================================================================
+  // one-api Project Settings
+  // Auto-detected Languages & Tools:
+  //   - Go 1.20+ (Backend: Gin, GORM, AWS SDK, Google Cloud APIs)
+  //   - React 18.2+ (Frontend: web/default, web/berry themes)
+  //   - Node.js (npm, react-scripts)
+  // ============================================================================
+
+  // ============================================================================
+  // Go Language Configuration (Backend)
+  // ============================================================================
+  "go.useLanguageServer": true,
+  "go.lintOnSave": "package",
+  "go.lintTool": "golangci-lint",
+  "go.lintFlags": ["--fast"],
+  "go.formatOnSave": true,
+  "go.formatTool": "goimports",
+  "go.autoComplete.unimportedPackages": true,
+  "go.useCodeSnippetsOnFunctionSuggest": true,
+  "go.docstringFormat": "description",
+  "go.liveErrors": {
+    "enabled": true,
+    "delay": 500
+  },
+  "go.mod": "mod",
+  "go.buildOnSave": "off",
+  "go.testOnSave": "off",
+  "go.coverOnSave": "off",
+  "go.coverageDecorator": {
+    "type": "gutter",
+    "coveredHighlightColor": "rgba(64,128,128,0.5)",
+    "uncoveredHighlightColor": "rgba(128,64,64,0.25)",
+    "coveredBorderColor": "rgba(64,128,128,0.8)",
+    "uncoveredBorderColor": "rgba(128,64,64,0.8)"
+  },
+
+  // gopls Configuration (Go Language Server)
+  "[go]": {
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    },
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true
+  },
+
+  // ============================================================================
+  // Node.js / React Configuration (Frontend)
+  // Detected: web/default (react-scripts 5.0.1, Prettier)
+  //           web/berry (react-scripts 5.0.1, ESLint, Prettier, Sass)
+  // Package Manager: pnpm (per project guidelines)
+  // ============================================================================
+  "nodejs.autoDetect": "on",
+  "npm.autoDetect": "on",
+
+  "[javascript]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    },
+    "editor.tabSize": 2
+  },
+
+  "[javascriptreact]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    },
+    "editor.tabSize": 2
+  },
+
+  "[typescript]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    },
+    "editor.tabSize": 2
+  },
+
+  "[typescriptreact]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    },
+    "editor.tabSize": 2
+  },
+
+  // ESLint Configuration (berry theme uses ESLint)
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "eslint.format.enable": true,
+  "eslint.lintTask.enable": true,
+
+  // pnpm Configuration (Project-wide package manager per guidelines)
+  // Note: npm.autoDetect is kept for compatibility, but pnpm is preferred
+  "pnpm.autoDetect": "on",
+
+  // Prettier Configuration (both themes use Prettier)
+  // Note: berry theme has more detailed prettier config in package.json
+  "prettier.semi": true,
+  "prettier.singleQuote": true,
+  "prettier.jsxSingleQuote": true,
+  "prettier.trailingComma": "es5",
+  "prettier.printWidth": 100,
+  "prettier.tabWidth": 2,
+  "prettier.useTabs": false,
+
+  // Sass Configuration (berry theme uses Sass)
+  "[scss]": {
+    "editor.tabSize": 2
+  },
+
+  "[sass]": {
+    "editor.tabSize": 2
+  },
+
+  // ============================================================================
+  // General Editor Settings
+  // ============================================================================
+
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.rulers": [80, 120],
+  "editor.wordWrap": "on",
+  "editor.insertSpaces": true,
+  "editor.tabSize": 4,
+  "editor.trimAutoWhitespace": true,
+  "editor.detectIndentation": true,
+  "editor.defaultFormatter": null,
+
+  // ============================================================================
+  // File Exclusions (Common temporary directories)
+  // ============================================================================
+
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/node_modules": true,
+    "**/target": true,
+    "**/build": true,
+    "**/.DS_Store": true,
+    "**/.git": true,
+    "**/.venv": true,
+    "**/.env": true,
+    "**/dist": true,
+    "**/vendor": true,
+    "**/.next": true,
+    "**/.nuxt": true,
+    "**/out": true,
+    "**/.cache": true,
+    "**/.pytest_cache": true,
+    "**/.vscode": false
+  },
+
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/**": true,
+    "**/vendor/**": true,
+    "**/target/**": true,
+    "**/.venv/**": true,
+    "**/.next/**": true,
+    "**/.nuxt/**": true,
+    "**/dist/**": true,
+    "**/.cache/**": true
+  },
+
+  // Search Exclusions
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/vendor": true,
+    "**/.git": true,
+    "**/target": true,
+    "**/__pycache__": true,
+    "**/dist": true,
+    "**/.next": true,
+    "**/.nuxt": true,
+    "**/build": true
+  },
+
+  // ============================================================================
+  // Language-Specific Settings
+  // ============================================================================
+
+  "[json]": {
+    "editor.tabSize": 2
+  },
+
+  "[jsonc]": {
+    "editor.tabSize": 2
+  },
+
+  "[yaml]": {
+    "editor.tabSize": 2
+  },
+
+  "[markdown]": {
+    "editor.wordWrap": "on",
+    "editor.formatOnSave": false
+  },
+
+  "[dockerfile]": {
+    "editor.tabSize": 2
+  },
+
+  "[html]": {
+    "editor.tabSize": 2
+  },
+
+  "[css]": {
+    "editor.tabSize": 2
+  },
+
+  // ============================================================================
+  // Git Configuration
+  // ============================================================================
+
+  "git.ignoreLimitWarning": true,
+  "git.autofetch": true,
+  "git.autorefresh": true,
+
+  // ============================================================================
+  // Terminal Configuration (Windows)
+  // ============================================================================
+
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "terminal.integrated.profiles.windows": {
+    "PowerShell": {
+      "source": "PowerShell",
+      "icon": "terminal-powershell"
+    },
+    "Command Prompt": {
+      "path": ["${env:windir}\\System32\\cmd.exe"],
+      "icon": "terminal-cmd"
+    }
+  },
+  "terminal.integrated.env.windows": {},
+
+  // ============================================================================
+  // Recommended Extensions for one-api Development
+  // ============================================================================
+  // Backend (Go):
+  //   - golang.go (Go language support)
+  //   - ms-vscode.makefile-tools (Makefile support)
+  //
+  // Frontend (React):
+  //   - dbaeumer.vscode-eslint (ESLint support)
+  //   - esbenp.prettier-vscode (Prettier formatter)
+  //   - dsznajder.es7-react-js-snippets (React snippets)
+  //
+  // General:
+  //   - ms-azuretools.vscode-docker (Docker support)
+  //   - eamodio.gitlens (Git integration)
+  //   - ms-vscode.vscode-json-languageservice (JSON support)
+  //   - redhat.vscode-yaml (YAML support)
+  // ============================================================================
+
+  // ============================================================================
+  // Telemetry
+  // ============================================================================
+
+  "telemetry.telemetryLevel": "off"
+}
