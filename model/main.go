@@ -47,7 +47,6 @@ func CreateRootAccountIfNeed() error {
 		if config.InitialRootToken != "" {
 			logger.SysLog("creating initial root token as requested")
 			token := Token{
-				Id:             1,
 				UserId:         rootUser.Id,
 				Key:            config.InitialRootToken,
 				Status:         TokenStatusEnabled,
