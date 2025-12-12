@@ -16,11 +16,15 @@ RUN DISABLE_ESLINT_PLUGIN='true' REACT_APP_VERSION=$(cat ./VERSION) npm run buil
 
 FROM golang:alpine AS builder2
 
-RUN apk add --no-cache \
+# 使用阿里云镜像源并添加重试机制
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories && \
+    apk update && \
+    apk add --no-cache \
     gcc \
     musl-dev \
     sqlite-dev \
-    build-base
+    build-base || \
+    (sleep 5 && apk add --no-cache gcc musl-dev sqlite-dev build-base)
 
 ENV GO111MODULE=on \
     CGO_ENABLED=1 \
